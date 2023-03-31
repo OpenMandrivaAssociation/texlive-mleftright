@@ -1,6 +1,6 @@
 Name:		texlive-mleftright
 Version:	53021
-Release:	1
+Release:	2
 Summary:	Variants of delimiters that act as maths open/close
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/mleftright
