@@ -3,7 +3,7 @@ Version:	53021
 Release:	2
 Summary:	Variants of delimiters that act as maths open/close
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/mleftright
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/mleftright
 License:	lppl1.3
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/mleftright.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/mleftright.doc.r%{version}.tar.xz
