@@ -1,41 +1,23 @@
-Name:		texlive-mleftright
-Version:	53021
-Release:	2
+%global tl_name mleftright
+%global tl_revision 79461
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	1.2
+Release:	%{tl_revision}.1
 Summary:	Variants of delimiters that act as maths open/close
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/mleftright
 License:	lppl1.3
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/mleftright.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/mleftright.doc.r%{version}.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/mleftright.source.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/mleftright.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/mleftright.doc.r%{tl_revision}.tar.xz
+Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/mleftright.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-The package defines variants \mleft and \mright of \left and
-\right, that make the delimiters act as \mathopen and
-\mathclose. These commands address spacing difficulties in
-subformulas.
+The package defines variants \mleft and \mright of \left and \right,
+that make the delimiters act as \mathopen and \mathclose. These commands
+address spacing difficulties in subformulas.
 
-%prep
-%setup -c -a1 -a2
-%autopatch -p1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%doc %{_texmfdistdir}/source/latex/mleftright
-%{_texmfdistdir}/tex/generic/mleftright
-%doc %{_texmfdistdir}/doc/latex/mleftright
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
